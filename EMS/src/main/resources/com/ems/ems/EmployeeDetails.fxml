@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="491.0" prefWidth="829.0" style="-fx-background-color: lightgray;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+   <top>
+      <HBox alignment="TOP_CENTER" prefHeight="50.0" prefWidth="600.0" style="-fx-border-color: black;" BorderPane.alignment="CENTER">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Add Detailes" />
+         </children>
+         <padding>
+            <Insets top="5.0" />
+         </padding>
+      </HBox>
+   </top>
+   <center>
+      <VBox alignment="CENTER" prefHeight="465.0" prefWidth="762.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="160.0" prefWidth="700.0" style="-fx-border-width: 1.2; -fx-border-color: gray; -fx-border-radius: 5;">
+               <VBox.margin>
+                  <Insets bottom="5.0" />
+               </VBox.margin>
+               <children>
+                  <VBox minHeight="-Infinity" minWidth="-Infinity" prefHeight="160.0" prefWidth="698.0">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: red;" text="Employee Details">
+                           <VBox.margin>
+                              <Insets left="20.0" top="3.0" />
+                           </VBox.margin>
+                        </Text>
+                        <HBox alignment="CENTER" prefHeight="51.0" prefWidth="698.0" spacing="15.0">
+                           <children>
+                              <Label text="EmployeeID">
+                                 <HBox.margin>
+                                    <Insets left="20.0" right="20.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <TextField style="-fx-background-color: whitesmoke;">
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                              </TextField>
+                              <Label text="Department">
+                                 <HBox.margin>
+                                    <Insets left="20.0" right="20.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <TextField style="-fx-background-color: whitesmoke;" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="51.0" prefWidth="698.0" spacing="15.0">
+                           <children>
+                              <Label text="First Name">
+                                 <HBox.margin>
+                                    <Insets left="20.0" right="20.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <TextField style="-fx-background-color: whitesmoke;">
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                              </TextField>
+                              <Label text="Salary Type">
+                                 <HBox.margin>
+                                    <Insets left="20.0" right="20.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <TextField style="-fx-background-color: whitesmoke;">
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                              </TextField>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="51.0" prefWidth="698.0" spacing="15.0">
+                           <children>
+                              <Label text="Last Name">
+                                 <HBox.margin>
+                                    <Insets left="20.0" right="20.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <TextField style="-fx-background-color: whitesmoke;">
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                              </TextField>
+                              <Label text="Basic Salary">
+                                 <HBox.margin>
+                                    <Insets left="20.0" right="20.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <TextField style="-fx-background-color: whitesmoke;" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <HBox maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="160.0" prefWidth="700.0" style="-fx-border-width: 1.2; -fx-border-color: gray; -fx-border-radius: 5;">
+               <children>
+                  <VBox minHeight="-Infinity" minWidth="-Infinity" prefHeight="160.0" prefWidth="698.0">
+                     <children>
+                        <HBox alignment="CENTER_LEFT" minHeight="-Infinity" minWidth="-Infinity" prefHeight="22.0" prefWidth="698.0">
+                           <children>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: red;" text="Allowance " />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: red;" text="Deduction">
+                                 <HBox.margin>
+                                    <Insets left="300.0" />
+                                 </HBox.margin>
+                              </Text>
+                           </children>
+                           <padding>
+                              <Insets left="20.0" />
+                           </padding>
+                        </HBox>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                           <children>
+                              <Label layoutX="56.0" layoutY="18.0" text="Travel Allowance" />
+                              <TextField layoutX="197.0" layoutY="14.0" style="-fx-background-color: whitesmoke;" />
+                              <Label layoutX="59.0" layoutY="61.0" text="Food Allowance" />
+                              <TextField layoutX="197.0" layoutY="57.0" style="-fx-background-color: whitesmoke;" />
+                              <Label layoutX="59.0" layoutY="99.0" text="Performance Bonus" />
+                              <TextField layoutX="197.0" layoutY="95.0" style="-fx-background-color: whitesmoke;" />
+                              <TextField layoutX="485.0" layoutY="15.0" style="-fx-background-color: whitesmoke;" />
+                              <TextField layoutX="485.0" layoutY="59.0" style="-fx-background-color: whitesmoke;" />
+                              <Label layoutX="406.0" layoutY="17.0" text="Tax" />
+                              <Label layoutX="406.0" layoutY="63.0" text="EPF" />
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="64.0" prefWidth="700.0" spacing="20.0" style="-fx-border-width: 1.2; -fx-border-color: gray; -fx-border-radius: 5;">
+               <children>
+                  <Button mnemonicParsing="false" prefWidth="120.0" text="Search Employee" />
+                  <Button mnemonicParsing="false" prefWidth="130.0" text="Update Details" />
+                  <Button mnemonicParsing="false" prefWidth="130.0" style="-fx-background-color: green;" text="Add Details" />
+                  <Button mnemonicParsing="false" prefWidth="130.0" style="-fx-background-color: tomato;" text="Exit" />
+               </children>
+            </HBox>
+         </children>
+         <padding>
+            <Insets top="7.0" />
+         </padding>
+      </VBox>
+   </center>
+</BorderPane>

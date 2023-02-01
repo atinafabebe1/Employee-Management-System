@@ -2,6 +2,7 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.geometry.Rectangle2D?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -9,7 +10,6 @@
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
@@ -26,15 +26,15 @@
    <children>
       <VBox prefHeight="513.0" prefWidth="250.0" style="-fx-background-color: gray;">
          <children>
-            <Pane prefHeight="96.0" prefWidth="206.0">
+            <HBox alignment="CENTER" prefHeight="74.0" prefWidth="188.0">
                <children>
-                  <Text layoutX="52.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #99CCFF;" text="EMS" wrappingWidth="102.3999923706055">
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #99CCFF; -fx-text-alignment: center;" text="EMS" wrappingWidth="102.3999923706055">
                      <font>
                         <Font name="System Bold Italic" size="39.0" />
                      </font>
                   </Text>
                </children>
-            </Pane>
+            </HBox>
             <Button mnemonicParsing="false" prefHeight="62.0" prefWidth="202.0" style="-fx-graphic-text-gap: 20; -fx-background-color: gray; -fx-text-fill: white; -fx-graphic: white;" text="Recruitment">
                <graphic>
                   <ImageView fitHeight="33.0" fitWidth="52.0" pickOnBounds="true" preserveRatio="true" style="visibility: white;">
@@ -44,8 +44,11 @@
                   </ImageView>
                </graphic>
                <font>
-                  <Font size="15.0" />
+                  <Font name="Arial Black" size="15.0" />
                </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </Button>
             <Button mnemonicParsing="false" prefHeight="62.0" prefWidth="202.0" style="-fx-graphic-text-gap: 17; -fx-background-color: gray; -fx-text-fill: white;" text="Payroll">
                <graphic>
@@ -62,8 +65,11 @@
                   <Insets right="40.0" />
                </padding>
                <font>
-                  <Font size="15.0" />
+                  <Font name="Arial Black" size="15.0" />
                </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </Button>
             <Button mnemonicParsing="false" prefHeight="62.0" prefWidth="202.0" style="-fx-graphic-text-gap: 20; -fx-background-color: gray; -fx-text-fill: white;" text="Employee">
                <graphic>
@@ -77,8 +83,11 @@
                   <Insets right="21.0" />
                </padding>
                <font>
-                  <Font size="15.0" />
+                  <Font name="Arial Black" size="15.0" />
                </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </Button>
             <Button mnemonicParsing="false" prefHeight="62.0" prefWidth="209.0" style="-fx-graphic-text-gap: 20; -fx-text-fill: white; -fx-background-color: gray;" text="Attendance">
                <graphic>
@@ -95,8 +104,11 @@
                   <Insets right="10.0" />
                </padding>
                <font>
-                  <Font size="15.0" />
+                  <Font name="Arial Black" size="15.0" />
                </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </Button>
             <Button mnemonicParsing="false" prefHeight="62.0" prefWidth="209.0" style="-fx-graphic-text-gap: 15; -fx-background-color: gray; -fx-text-fill: white;" text="Training">
                <graphic>
@@ -110,8 +122,11 @@
                   <Insets right="35.0" />
                </padding>
                <font>
-                  <Font size="15.0" />
+                  <Font name="Arial Black" size="15.0" />
                </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </Button>
             <Button mnemonicParsing="false" prefHeight="62.0" prefWidth="209.0" style="-fx-graphic-text-gap: 20; -fx-background-color: gray; -fx-text-fill: white;" text="Profile">
                <graphic>
@@ -125,15 +140,21 @@
                   <Insets right="51.0" />
                </padding>
                <font>
-                  <Font size="15.0" />
+                  <Font name="Arial Black" size="15.0" />
                </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </Button>
-            <HBox alignment="BOTTOM_LEFT" prefHeight="93.0" prefWidth="206.0" VBox.vgrow="ALWAYS">
+            <HBox alignment="BOTTOM_LEFT" VBox.vgrow="ALWAYS">
                <children>
                   <Button mnemonicParsing="false" prefWidth="75.0" style="-fx-background-color: #2196F3; -fx-text-fill: white;" text="Logout">
                      <HBox.margin>
                         <Insets bottom="15.0" left="20.0" />
                      </HBox.margin>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
                   </Button>
                </children>
                <padding>
