@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="root" prefHeight="592.0" prefWidth="858.0" style="-fx-background-color: #ebf3f9;" stylesheets="@style/HomeFormStyles.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ems.ems.AttendanceHomeCOntroller">
+    <children>
+      <VBox alignment="CENTER" prefHeight="586.0" prefWidth="858.0">
+         <children>
+            <HBox alignment="CENTER" prefHeight="196.0" prefWidth="858.0" spacing="20.0">
+               <children>
+                    <Button fx:id="btnViewReports" accessibleText="Click to view attendance reports" contentDisplay="TOP" graphicTextGap="10.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#btnViewReports_OnAction" prefHeight="103.0" prefWidth="261.0" style="-fx-background-color: white;" text="[F2] View Reports">
+                        <graphic>
+                            <ImageView fitHeight="50.0" fitWidth="47.0" pickOnBounds="true" preserveRatio="true">
+                                <image>
+                                    <Image url="@assets/icons8-view-headline-48.png" />
+                                </image>
+                            </ImageView>
+                        </graphic>
+                        <font>
+                            <Font name="Ubuntu" size="16.0" />
+                        </font>
+                        <cursor>
+                            <Cursor fx:constant="HAND" />
+                        </cursor>
+                    </Button>
+                    <Button fx:id="btnRecordAttendance" accessibleText="Click to record a new student attendance" contentDisplay="TOP" graphicTextGap="10.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#btnRecordAttendance_OnAction" prefHeight="103.0" prefWidth="244.0" style="-fx-background-color: white;" text="[F1] Record Attendance">
+                        <graphic>
+                            <ImageView fx:id="reco" fitHeight="55.0" fitWidth="52.0" onDragDetected="#btnRecordAttendance_OnAction" pickOnBounds="true" preserveRatio="true">
+                                <image>
+                                    <Image url="@assets/icons8-event-accepted-tentatively-48.png" />
+                                </image>
+                            </ImageView>
+                        </graphic>
+                        <font>
+                            <Font name="Ubuntu" size="16.0" />
+                        </font>
+                        <cursor>
+                            <Cursor fx:constant="HAND" />
+                        </cursor>
+                    </Button>
+                    <Button accessibleText="Click to record a new student attendance" contentDisplay="TOP" graphicTextGap="10.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false"  prefHeight="103.0" prefWidth="230.0" style="-fx-background-color: white;" text="New Employee +">
+                        <graphic>
+                            <ImageView fitHeight="53.0" fitWidth="176.0" pickOnBounds="true" preserveRatio="true">
+                                <image>
+                                    <Image url="@assets/cc.jpg" />
+                                </image>
+                            </ImageView>
+                        </graphic>
+                        <font>
+                            <Font name="Ubuntu" size="16.0" />
+                        </font>
+                        <cursor>
+                            <Cursor fx:constant="HAND" />
+                        </cursor>
+                    </Button>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+    </children>
+</AnchorPane>

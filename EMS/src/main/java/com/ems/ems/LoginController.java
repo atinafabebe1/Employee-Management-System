@@ -88,7 +88,7 @@ public class LoginController implements Initializable {
     }
 
     public LoginController() {
-        con = ConnectionUtil.conDB();
+        con = com.ems.ems.ConnectionUtil.conDB();
     }
 
     private String logIn() {
@@ -119,10 +119,10 @@ public class LoginController implements Initializable {
                 status = "Exception";
             }
         }
-        
+
         return status;
     }
-    
+
     private void setLblError(Color color, String text) {
         lblErrors.setTextFill(color);
         lblErrors.setText(text);

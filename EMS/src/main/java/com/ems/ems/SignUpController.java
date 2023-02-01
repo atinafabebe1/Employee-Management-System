@@ -8,6 +8,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -96,7 +97,7 @@ public class SignUpController implements Initializable {
     }
 
     public SignUpController() {
-        con = ConnectionUtil.conDB();
+        con = com.ems.ems.ConnectionUtil.conDB();
     }
 
     private String signUp() {
