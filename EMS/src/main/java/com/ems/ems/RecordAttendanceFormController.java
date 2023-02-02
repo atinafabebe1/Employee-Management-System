@@ -48,7 +48,7 @@ public class RecordAttendanceFormController {
 
         Connection connection = com.ems.ems.ConnectionUtil.conDB();
         try {
-            stmSearchEmployee = connection.prepareStatement("SELECT * FROM users WHERE id=?");
+            stmSearchEmployee = connection.prepareStatement("SELECT * FROM employee WHERE id=?");
         } catch (Exception e) {
             new RJAlert(Alert.AlertType.WARNING, "Failed to connect with DB", "Connection Error", "Error").show();
             e.printStackTrace();
@@ -111,7 +111,7 @@ public class RecordAttendanceFormController {
             }
 
             PreparedStatement stm2 = connection.
-                    prepareStatement("INSERT INTO attendance (date, status,id) VALUES (?,?,?)");
+                    prepareStatement("INSERT INTO attendance (date, status,employee_id) VALUES (?,?,?)");
             stm2.setString(1, String.valueOf(String.format("%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS",new Date())));
             stm2.setString(2, String.valueOf(in));
             stm2.setInt(3, Integer.parseInt(employee.id));
@@ -132,7 +132,7 @@ public class RecordAttendanceFormController {
         try {
             Connection connection = com.ems.ems.ConnectionUtil.conDB();
             Statement stm = connection.createStatement();
-            ResultSet rst = stm.executeQuery("SELECT e.id, e.firstName, a.status, a.date FROM users e INNER JOIN attendance a on e.id = a.id " +
+            ResultSet rst = stm.executeQuery("SELECT e.id, e.firstName, a.status, a.date FROM employee e INNER JOIN attendance a on e.id = a.id " +
                     "ORDER BY date DESC LIMIT 1");
             if (rst.next()){
                 lblID.setText("ID: " + rst.getString("id"));
