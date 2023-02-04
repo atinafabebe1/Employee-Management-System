@@ -10,10 +10,10 @@ import java.io.IOException;
 public class HelloApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("SelectionRecuritment.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("HomePageEmployeer.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
-        stage.setMinHeight(900);
-        stage.setMinWidth(900);
+        stage.setMinHeight(400);
+        stage.setMinWidth(400);
         stage.setTitle("EMS");
         stage.setScene(scene);
         stage.show();

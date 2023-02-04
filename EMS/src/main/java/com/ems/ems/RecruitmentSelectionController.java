@@ -1,5 +1,6 @@
 package com.ems.ems;
 
+import com.ems.ems.HttpService;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -69,7 +70,7 @@ public class RecruitmentSelectionController {
 
     public void renderEmployee(){
         ProgressIndicator progressIndecator = new ProgressIndicator();
-        progressIndecator.setPrefSize(20, 20);
+        progressIndecator.setPrefSize(40, 40);
         searchHB.getChildren().add(progressIndecator);
         try {
             service = new HttpService(URI.create(baseUri));
@@ -83,11 +84,19 @@ public class RecruitmentSelectionController {
                     Object obj = new JSONParser().parse(e.getSource().getValue().toString());
                     JSONObject employees = (JSONObject) obj;
                     data = (JSONArray) employees.get("data");
-
-                    if (data.size() > 0) {
-                        System.out.println("Am not empty");
-                        System.out.println(data);
+                    if((employeeIndex+1)<data.size()){
+                        nextButton.setDisable(false);
                     }
+                    else{
+                        nextButton.setDisable(true);
+                    }
+                    if(employeeIndex>0){
+                        prevButton.setDisable(false);
+                    }
+                    else {
+                        prevButton.setDisable(true);
+                    }
+
                     JSONObject employeeObj,employee;
 
                     employeeObj=(JSONObject) data.get(employeeIndex);
@@ -102,7 +111,6 @@ public class RecruitmentSelectionController {
                     experienceTF.setText(experiments);
                     jobTitleTF.setText((String) employeeObj.get("jobTitle"));
                     userPhotoIMV.setImage(new Image((String) employeeObj.get("photo")));
-                    System.out.println(obj);
 
                 } catch (Exception ex) {
 
@@ -111,37 +119,8 @@ public class RecruitmentSelectionController {
 
         });
         service.start();
-
-
     }
-
-    public void renderControls(){
-        if((employeeIndex+1)<data.size()){
-            nextButton.setDisable(false);
-        }else {
-            nextButton.setDisable(true);
-        }
-
-        if(employeeIndex>0){
-            prevButton.setDisable(false);
-        }
-        else{
-            prevButton.setDisable(true);
-        }
-    }
-    public void resetUI(){
-        informations.clear();
-        experienceTF.clear();
-        jobTitleTF.clear();
-        nextButton.setDisable(true);
-        prevButton.setDisable(true);
-        userPhotoIMV.setImage(new Image(getClass().getResourceAsStream("Unknown.jpg")));
-        employeeIndex=0;
-    }
-
     public void initialize(){
        renderEmployee();
-//        informationLV.setItems(informations);
-//        informationLV.setPlaceholder(new Label("Not content to displa"));
     }
 }

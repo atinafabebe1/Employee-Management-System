@@ -91,12 +91,12 @@
             </HBox>
             <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
                <children>
-                  <Label fx:id="emailTextField" prefHeight="16.0" prefWidth="130.0" text="Email">
+                  <Label fx:id="#emailTextField" prefHeight="16.0" prefWidth="130.0" text="Email">
                      <HBox.margin>
                         <Insets />
                      </HBox.margin>
                   </Label>
-                  <TextField fx:id="roleTextField">
+                  <TextField fx:id="emailTextField">
                      <HBox.margin>
                         <Insets />
                      </HBox.margin>

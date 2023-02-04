@@ -10,7 +10,7 @@ import java.net.URI;
 public class HttpService extends Service<String> {
     URI uri;
 
-    HttpService(URI uri){
+    public HttpService(URI uri){
         this.uri=uri;
     }
 

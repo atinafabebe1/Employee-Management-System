@@ -11,11 +11,12 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="513.0" prefWidth="754.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="513.0" prefWidth="754.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ems.ems.HomePageEmployeerController">
   <columnConstraints>
     <ColumnConstraints maxWidth="292.79998779296875" minWidth="10.0" prefWidth="187.2000274658203" />
     <ColumnConstraints hgrow="SOMETIMES" />
@@ -35,11 +36,11 @@
                   </Text>
                </children>
             </HBox>
-            <Button mnemonicParsing="false" prefHeight="62.0" prefWidth="202.0" style="-fx-graphic-text-gap: 20; -fx-background-color: gray; -fx-text-fill: white; -fx-graphic: white;" text="Recruitment">
+            <Button mnemonicParsing="false" onAction="#recruitment" prefHeight="62.0" prefWidth="202.0" style="-fx-graphic-text-gap: 20; -fx-background-color: gray; -fx-text-fill: white; -fx-graphic: white;" text="Recruitment">
                <graphic>
-                  <ImageView fitHeight="33.0" fitWidth="52.0" pickOnBounds="true" preserveRatio="true" style="visibility: white;">
+                  <ImageView fitHeight="33.0" fitWidth="52.0" opacity="0.5" pickOnBounds="true" preserveRatio="true" style="visibility: white;">
                      <image>
-                        <Image url="@../Images/icons8-recruitment-68.png" />
+                        <Image url="@../Images/recruitment.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -50,9 +51,9 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="62.0" prefWidth="202.0" style="-fx-graphic-text-gap: 17; -fx-background-color: gray; -fx-text-fill: white;" text="Payroll">
+            <Button mnemonicParsing="false" onAction="#payroll" prefHeight="62.0" prefWidth="202.0" style="-fx-graphic-text-gap: 17; -fx-background-color: gray; -fx-text-fill: white;" text="Payroll">
                <graphic>
-                  <ImageView fitHeight="33.0" fitWidth="52.0" opacity="0.82" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="33.0" fitWidth="52.0" opacity="0.5" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../Images/icons8-payroll-64.png" />
                      </image>
@@ -71,11 +72,11 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="62.0" prefWidth="202.0" style="-fx-graphic-text-gap: 20; -fx-background-color: gray; -fx-text-fill: white;" text="Employee">
+            <Button mnemonicParsing="false" onAction="#employee" prefHeight="62.0" prefWidth="202.0" style="-fx-graphic-text-gap: 20; -fx-background-color: gray; -fx-text-fill: white;" text="Employee">
                <graphic>
-                  <ImageView fitHeight="33.0" fitWidth="70.0" opacity="0.93" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="33.0" fitWidth="70.0" opacity="0.5" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../Images/icons8-name-tag-50.png" />
+                        <Image url="@../Images/employee.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -89,9 +90,9 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="62.0" prefWidth="209.0" style="-fx-graphic-text-gap: 20; -fx-text-fill: white; -fx-background-color: gray;" text="Attendance">
+            <Button mnemonicParsing="false" onAction="#attendanceHome" prefHeight="62.0" prefWidth="209.0" style="-fx-graphic-text-gap: 20; -fx-text-fill: white; -fx-background-color: gray;" text="Attendance">
                <graphic>
-                  <ImageView fitHeight="33.0" fitWidth="52.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="33.0" fitWidth="52.0" opacity="0.6" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../Images/icons8-checked-user-male-80.png" />
                      </image>
@@ -112,7 +113,7 @@
             </Button>
             <Button mnemonicParsing="false" prefHeight="62.0" prefWidth="209.0" style="-fx-graphic-text-gap: 15; -fx-background-color: gray; -fx-text-fill: white;" text="Training">
                <graphic>
-                  <ImageView fitHeight="31.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="31.0" fitWidth="31.0" opacity="0.5" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../Images/icons8-teacher-50.png" />
                      </image>
@@ -130,7 +131,7 @@
             </Button>
             <Button mnemonicParsing="false" prefHeight="62.0" prefWidth="209.0" style="-fx-graphic-text-gap: 20; -fx-background-color: gray; -fx-text-fill: white;" text="Profile">
                <graphic>
-                  <ImageView fitHeight="33.0" fitWidth="52.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="33.0" fitWidth="52.0" opacity="0.5" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../Images/icons8-user-50.png" />
                      </image>
@@ -148,7 +149,7 @@
             </Button>
             <HBox alignment="BOTTOM_LEFT" VBox.vgrow="ALWAYS">
                <children>
-                  <Button mnemonicParsing="false" prefWidth="75.0" style="-fx-background-color: #2196F3; -fx-text-fill: white;" text="Logout">
+                  <Button mnemonicParsing="false" onAction="#signOutBtnHandler" prefWidth="75.0" style="-fx-background-color: #2196F3; -fx-text-fill: white;" text="Logout">
                      <HBox.margin>
                         <Insets bottom="15.0" left="20.0" />
                      </HBox.margin>
@@ -161,8 +162,9 @@
                   <Insets bottom="6.0" right="78.0" />
                </padding>
             </HBox>
+            <AnchorPane />
          </children>
       </VBox>
-      <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" />
+      <StackPane fx:id="containerSP" prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="1" />
    </children>
 </GridPane>

@@ -28,7 +28,8 @@ public class SignUpController implements Initializable {
     private TextField addressTextField;
 
     @FXML
-    private Label emailTextField;
+    private TextField emailTextField;
+
 
     @FXML
     private TextField firstNameTextField;
