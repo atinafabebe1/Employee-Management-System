@@ -12,7 +12,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="533.0" prefWidth="803.0" style="-fx-background-color: lightgray;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="533.0" prefWidth="803.0" style="-fx-background-color: lightgray;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ems.ems.EmployeeRecordController">
   <columnConstraints>
     <ColumnConstraints hgrow="SOMETIMES" />
     <ColumnConstraints hgrow="SOMETIMES" />
@@ -36,92 +36,82 @@
          <children>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
                <children>
-                  <Label text="First Name">
+                  <Label prefWidth="120.0" text="First Name">
                      <HBox.margin>
                         <Insets />
                      </HBox.margin></Label>
-                  <TextField>
+                  <TextField fx:id="firstNameTF" onKeyReleased="#keyReleasedProperty">
                      <HBox.margin>
-                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                        <Insets />
                      </HBox.margin></TextField>
-                  <Label text="Last Name">
+                  <Label prefWidth="120.0" text="Last Name">
                      <HBox.margin>
-                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                        <Insets />
                      </HBox.margin>
                   </Label>
-                  <TextField>
+                  <TextField fx:id="lastNameTF" onKeyReleased="#keyReleasedProperty">
                      <HBox.margin>
-                        <Insets bottom="20.0" left="34.0" right="10.0" top="20.0" />
+                        <Insets />
                      </HBox.margin>
                   </TextField>
                </children>
             </HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
                <children>
-                  <Label text="Address">
+                  <Label prefWidth="120.0" text="EmployeeNO">
                      <HBox.margin>
                         <Insets />
                      </HBox.margin>
                   </Label>
-                  <TextField>
+                  <TextField fx:id="EmployeeNOTF" onKeyReleased="#keyReleasedProperty">
                      <HBox.margin>
-                        <Insets bottom="30.0" left="38.0" right="15.0" top="30.0" />
+                        <Insets />
                      </HBox.margin>
                   </TextField>
-                  <Label text="Phone Number">
+                  <Label prefWidth="120.0" text="Phone Number">
                      <HBox.margin>
                         <Insets />
                      </HBox.margin>
                   </Label>
-                  <TextField>
+                  <TextField fx:id="PhoneNumberTF" onKeyReleased="#keyReleasedProperty">
                      <HBox.margin>
-                        <Insets bottom="20.0" left="30.0" right="10.0" top="20.0" />
+                        <Insets />
                      </HBox.margin>
                   </TextField>
                </children>
             </HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
                <children>
-                  <Label text="Prev Job">
+                  <Label prefWidth="120.0" text="DepartmentID">
                      <HBox.margin>
-                        <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                        <Insets />
                      </HBox.margin></Label>
-                  <TextField>
+                  <TextField fx:id="DepartmetnIDTF" onKeyReleased="#keyReleasedProperty">
                      <HBox.margin>
-                        <Insets bottom="15.0" left="10.0" right="15.0" top="15.0" />
+                        <Insets />
                      </HBox.margin></TextField>
-                  <Label text="Qualification">
+                  <Label prefWidth="120.0" text="PositionID">
                      <HBox.margin>
-                        <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                        <Insets />
                      </HBox.margin>
                   </Label>
-                  <TextField>
+                  <TextField fx:id="positionIDTF" onKeyReleased="#keyReleasedProperty">
                      <HBox.margin>
-                        <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                        <Insets />
                      </HBox.margin>
                   </TextField>
                </children>
             </HBox>
-            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
                <children>
-                  <Label text="Salary">
+                  <Label prefWidth="120.0" text="Salary">
                      <HBox.margin>
-                        <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                        <Insets left="93.0" />
                      </HBox.margin></Label>
-                  <TextField>
+                  <TextField fx:id="salaryTF" onKeyReleased="#keyReleasedProperty">
                      <HBox.margin>
-                        <Insets bottom="15.0" left="20.0" right="15.0" top="15.0" />
+                        <Insets />
                      </HBox.margin></TextField>
-                  <Label text="Performance">
-                     <HBox.margin>
-                        <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
-                     </HBox.margin>
-                  </Label>
-                  <TextField>
-                     <HBox.margin>
-                        <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
-                     </HBox.margin>
-                  </TextField>
                </children>
                <VBox.margin>
                   <Insets />
@@ -129,8 +119,8 @@
             </HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="30.0">
                <children>
-                  <Button mnemonicParsing="false" prefWidth="75.0" style="-fx-background-color: green; -fx-text-fill: white;" text="Register" />
-                  <Button mnemonicParsing="false" prefWidth="75.0" style="-fx-background-color: red; -fx-text-fill: white;" text="Clear" />
+                  <Button fx:id="registerBTN" mnemonicParsing="false" onAction="#registerBtnHandler" prefWidth="75.0" style="-fx-background-color: green; -fx-text-fill: white;" text="Register" />
+                  <Button fx:id="clearBTN" mnemonicParsing="false" onAction="#clearBtnHanlder" prefWidth="75.0" style="-fx-background-color: red; -fx-text-fill: white;" text="Clear" />
                </children>
             </HBox>
          </children>
