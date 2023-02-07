@@ -102,16 +102,17 @@
                   </TextField>
                </children>
             </HBox>
-            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
                <children>
                   <Label prefWidth="120.0" text="Salary">
                      <HBox.margin>
-                        <Insets left="93.0" />
+                        <Insets />
                      </HBox.margin></Label>
                   <TextField fx:id="salaryTF" onKeyReleased="#keyReleasedProperty">
                      <HBox.margin>
                         <Insets />
                      </HBox.margin></TextField>
+                  <Label fx:id="errorLBL" prefWidth="300.0" />
                </children>
                <VBox.margin>
                   <Insets />

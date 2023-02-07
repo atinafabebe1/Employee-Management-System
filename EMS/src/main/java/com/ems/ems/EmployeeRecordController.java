@@ -60,8 +60,8 @@ public class EmployeeRecordController implements Initializable {
     @FXML
     void registerBtnHandler(ActionEvent event) {
 
-        if (!firstNameTF.getText().isEmpty()  && lastNameTF.getText().isEmpty() && EmployeeNOTF.getText().isEmpty() && DepartmetnIDTF.getText().isEmpty()
-           && PhoneNumberTF.getText().isEmpty() && positionIDTF.getText().isEmpty() && salaryTF.getText().isEmpty()
+        if (firstNameTF.getText().isEmpty()  || lastNameTF.getText().isEmpty() || EmployeeNOTF.getText().isEmpty() || DepartmetnIDTF.getText().isEmpty()
+           || PhoneNumberTF.getText().isEmpty() || positionIDTF.getText().isEmpty() || salaryTF.getText().isEmpty()
         ) {
             registerBTN.setDisable(true);
             errorLBL.setText("All fields are required!!!");
@@ -114,7 +114,7 @@ public class EmployeeRecordController implements Initializable {
 
     @FXML
     void keyReleasedProperty(){
-        boolean isDiabled= Boolean.parseBoolean((firstNameTF.getText()));
+        boolean isDiabled= Boolean.parseBoolean(String.valueOf((firstNameTF.getText().isEmpty())));
         registerBTN.setDisable(isDiabled);
         clearBTN.setDisable(isDiabled);
     }

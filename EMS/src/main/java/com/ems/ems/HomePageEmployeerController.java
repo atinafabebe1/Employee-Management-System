@@ -14,6 +14,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.Objects;
 import java.util.ResourceBundle;
 
 public class HomePageEmployeerController implements Initializable{
@@ -35,8 +36,10 @@ public class HomePageEmployeerController implements Initializable{
     public void initialize(URL url, ResourceBundle resourceBundle) {
         try{
             Parent fxml=FXMLLoader.load(getClass().getResource("Login.fxml"));
-            containerSP.getChildren().setAll(fxml);
-
+            Stage stage=new Stage();
+            Scene scene=new Scene(fxml);
+            stage.setScene(scene);
+            stage.show();
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -67,7 +70,7 @@ public class HomePageEmployeerController implements Initializable{
     }
     @FXML
     public void employee(javafx.event.ActionEvent actionEvent ) throws IOException{
-        Parent fxml=FXMLLoader.load(getClass().getResource("Employee.fxml"));
+        Parent fxml=FXMLLoader.load(getClass().getResource("EmployeePage.fxml"));
         containerSP.getChildren().removeAll();
         containerSP.getChildren().setAll(fxml);
     }
