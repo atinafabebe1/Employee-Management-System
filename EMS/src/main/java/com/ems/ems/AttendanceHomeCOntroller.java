@@ -3,9 +3,11 @@ package com.ems.ems;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -16,7 +18,7 @@ public class AttendanceHomeCOntroller {
     public Button btnViewReports;
 
 
-    public AnchorPane root;
+    public VBox root;
 
     public void initialize(){
 
@@ -25,7 +27,7 @@ public class AttendanceHomeCOntroller {
 
 
     public void btnRecordAttendance_OnAction(ActionEvent event) throws IOException {
-        AnchorPane root = FXMLLoader.load(this.getClass().getResource("RecordAttendanceForm.fxml"));
+        Parent root = FXMLLoader.load(this.getClass().getResource("RecordAttendanceForm.fxml"));
         Scene attendanceScene = new Scene(root);
         Stage stage = new Stage();
         stage.setTitle("Employee Attendance System: RecordAttendanceFormController Attendance");
