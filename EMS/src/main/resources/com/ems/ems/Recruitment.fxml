@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="551.0" prefWidth="768.0" style="-fx-background-color: #bcbcbc;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="551.0" prefWidth="768.0" style="-fx-background-color: light grey;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <AnchorPane layoutX="78.0" layoutY="46.0" prefHeight="460.0" prefWidth="612.0" style="-fx-background-color: #d6d6d6; -fx-border-radius: 30; -fx-background-radius: 30;" styleClass="shadowed-pane" stylesheets="@style/Recruitment.css">
          <children>
