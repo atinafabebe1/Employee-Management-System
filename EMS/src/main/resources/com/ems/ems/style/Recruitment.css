@@ -1,0 +1,4 @@
+.shadowed-pane {
+  -fx-background-color: white;
+  -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 40, 0, 10, 10);
+}
