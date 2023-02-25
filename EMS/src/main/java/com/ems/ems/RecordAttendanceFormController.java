@@ -33,7 +33,7 @@ public class RecordAttendanceFormController {
     private PreparedStatement stmSearchEmployee;
     private Employee employee;
 
-    public void initialize() {
+    public void initialize() throws ClassNotFoundException {
         btnIn.setDisable(true);
         btnOut.setDisable(true);
         lblDate.setText(String.format("%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS %1$Tp", new Date()));
@@ -69,15 +69,15 @@ public class RecordAttendanceFormController {
         });
     }
 
-    public void btnIn_OnAction(ActionEvent event) {
+    public void btnIn_OnAction(ActionEvent event) throws ClassNotFoundException {
         recordAttendance(true);
     }
 
-    public void btnOut_OnAction(ActionEvent event) {
+    public void btnOut_OnAction(ActionEvent event) throws ClassNotFoundException {
         recordAttendance(false);
     }
 
-    private void recordAttendance(boolean in) {
+    private void recordAttendance(boolean in) throws ClassNotFoundException {
         Connection connection = com.ems.ems.ConnectionUtil.conDB();
 
         /* Check last record status */
@@ -144,7 +144,7 @@ public class RecordAttendanceFormController {
                 lblName.setText("Name: -");
                 lblStatus.setText("Date: -");
             }
-        } catch (SQLException e) {
+        } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
         }
     }

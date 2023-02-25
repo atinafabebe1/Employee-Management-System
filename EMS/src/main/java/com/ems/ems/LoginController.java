@@ -39,7 +39,7 @@ public class LoginController implements Initializable {
     @FXML
     private Button btnSignin;
 
-    Connection con = null;
+    Connection con = ConnectionUtil.conDB();
     PreparedStatement preparedStatement = null;
     ResultSet resultSet = null;
 
@@ -87,7 +87,7 @@ public class LoginController implements Initializable {
         }
     }
 
-    public LoginController() {
+    public LoginController() throws ClassNotFoundException {
         con = com.ems.ems.ConnectionUtil.conDB();
     }
 

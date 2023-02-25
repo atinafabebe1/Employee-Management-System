@@ -5,13 +5,14 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 public class ConnectionUtil {
     Connection conn = null;
-    public static Connection conDB()
+    public static Connection conDB() throws  ClassNotFoundException
     {
+        Class.forName("com.mysql.jdbc.Driver");
+        Connection con= null;
         try {
-            Class.forName("com.mysql.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost/EMS", "root", "AbebeMerob16!^");
+            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/EMS", "root", "root");
             return con;
-        } catch (ClassNotFoundException | SQLException ex) {
+        } catch (SQLException ex) {
             System.err.println("ConnectionUtil : "+ex.getMessage());
            return null;
         }

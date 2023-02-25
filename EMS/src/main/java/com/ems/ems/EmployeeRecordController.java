@@ -58,7 +58,7 @@ public class EmployeeRecordController implements Initializable {
     }
 
     @FXML
-    void registerBtnHandler(ActionEvent event) {
+    void registerBtnHandler(ActionEvent event) throws ClassNotFoundException {
 
         if (firstNameTF.getText().isEmpty()  || lastNameTF.getText().isEmpty() || EmployeeNOTF.getText().isEmpty() || DepartmetnIDTF.getText().isEmpty()
            || PhoneNumberTF.getText().isEmpty() || positionIDTF.getText().isEmpty() || salaryTF.getText().isEmpty()

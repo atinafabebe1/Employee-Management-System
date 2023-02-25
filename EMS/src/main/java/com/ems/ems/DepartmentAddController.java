@@ -26,7 +26,7 @@ public class DepartmentAddController implements Initializable {
 
 
     @FXML
-    void addBtnHandler(ActionEvent event) {
+    void addBtnHandler(ActionEvent event) throws ClassNotFoundException {
         if(departmentTF.getText()==""){
             addBtn.setDisable(true);
         }

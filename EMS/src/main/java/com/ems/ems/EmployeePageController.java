@@ -125,7 +125,7 @@ public class EmployeePageController implements Initializable {
            table.getColumns().add(departmentCol);
            table.getColumns().add(positionCol);
            table.getColumns().add(salaryCOl);
-       }catch (SQLException e){
+       }catch (SQLException | ClassNotFoundException e){
            e.printStackTrace();
            new RJAlert(Alert.AlertType.WARNING,"failed to load employee","Connection Error","Error").show();
        }

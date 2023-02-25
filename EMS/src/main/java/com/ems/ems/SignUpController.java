@@ -59,6 +59,10 @@ public class SignUpController implements Initializable {
     private TextField usernameTextField;
     @FXML
     private Label lblErrors;
+
+    public SignUpController() throws ClassNotFoundException {
+    }
+
     @FXML
     void handleRegisterButton(ActionEvent event) {
 
@@ -82,7 +86,7 @@ public class SignUpController implements Initializable {
     }
 
 
-    Connection con = null;
+    Connection con = com.ems.ems.ConnectionUtil.conDB();
     PreparedStatement preparedStatement = null;
     ResultSet resultSet = null;
 
@@ -97,9 +101,9 @@ public class SignUpController implements Initializable {
         }
     }
 
-    public SignUpController() {
-        con = com.ems.ems.ConnectionUtil.conDB();
-    }
+//    public SignUpController() {
+//
+//    }
 
     private String signUp() {
 
@@ -135,7 +139,8 @@ public class SignUpController implements Initializable {
                     "(phoneNumber,firstName,lastName,email,username,address,homeNo,password,role)" +
                     " VALUES (?,?,?,?,?,?,?,?,?)";
             try {
-                preparedStatement = con.prepareStatement(sql);
+                preparedStatement = con
+                        .prepareStatement(sql);
                 preparedStatement.setString(1, phoneNumber);
                 preparedStatement.setString(2, firstName);
                 preparedStatement.setString(3, lastName);
