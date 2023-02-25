@@ -84,7 +84,7 @@ public class RecordAttendanceFormController {
         try {
             String lastStatus = null;
             PreparedStatement stm = connection.
-                    prepareStatement("SELECT status, date FROM attendance WHERE id=? ORDER BY date DESC LIMIT 1");
+                    prepareStatement("SELECT status, date FROM attendance WHERE employee_id=? ORDER BY date DESC LIMIT 1");
             stm.setString(1, employee.id);
             ResultSet rst = stm.executeQuery();
             if (rst.next()) {
@@ -132,7 +132,7 @@ public class RecordAttendanceFormController {
         try {
             Connection connection = com.ems.ems.ConnectionUtil.conDB();
             Statement stm = connection.createStatement();
-            ResultSet rst = stm.executeQuery("SELECT e.id, e.firstName, a.status, a.date FROM employee e INNER JOIN attendance a on e.id = a.id " +
+            ResultSet rst = stm.executeQuery("SELECT e.id, e.firstName, a.status, a.date FROM employee e INNER JOIN attendance a on e.id = a.employee_id " +
                     "ORDER BY date DESC LIMIT 1");
             if (rst.next()){
                 lblID.setText("ID: " + rst.getString("id"));

@@ -35,11 +35,9 @@ public class HomePageEmployeerController implements Initializable{
     @FXML
     public void initialize(URL url, ResourceBundle resourceBundle) {
         try{
-            Parent fxml=FXMLLoader.load(getClass().getResource("Login.fxml"));
-            Stage stage=new Stage();
-            Scene scene=new Scene(fxml);
-            stage.setScene(scene);
-            stage.show();
+            Parent fxml=FXMLLoader.load(getClass().getResource("EmployeePage.fxml"));
+            containerSP.getChildren().removeAll();
+            containerSP.getChildren().setAll(fxml);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
