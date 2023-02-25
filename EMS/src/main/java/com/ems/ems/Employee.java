@@ -7,21 +7,20 @@ public class Employee {
     private String lastname;
     private int employee_no;
     private String phoneNumber;
-    private String departmentName;
-    private String positionName;
+    private String department_name;
+    private String position_name;
     private double salary;
 
-    public Employee(int id, String firstname, String lastname, int employee_no, String phoneNumber, String departmentName, String positionName, double salary) {
+    public Employee(int id, String firstname, String lastname, int employee_no, String phoneNumber, String department_name, String position_name, double salary) {
         this.id = id;
         this.firstname = firstname;
         this.lastname = lastname;
         this.employee_no = employee_no;
         this.phoneNumber = phoneNumber;
-        this.departmentName = departmentName;
-        this.positionName = positionName;
+        this.department_name = department_name;
+        this.position_name = position_name;
         this.salary = salary;
     }
-
 
     public int getId() {
         return id;
@@ -63,20 +62,20 @@ public class Employee {
         this.phoneNumber = phoneNumber;
     }
 
-    public String getDepartmentName() {
-        return departmentName;
+    public String getDepartment_name() {
+        return department_name;
     }
 
-    public void setDepartmentName(String departmentName) {
-        this.departmentName = departmentName;
+    public void setDepartment_name(String department_name) {
+        this.department_name = department_name;
     }
 
-    public String getPositionName() {
-        return positionName;
+    public String getPosition_name() {
+        return position_name;
     }
 
-    public void setPositionName(String positionName) {
-        this.positionName = positionName;
+    public void setPosition_name(String position_name) {
+        this.position_name = position_name;
     }
 
     public double getSalary() {
@@ -85,5 +84,19 @@ public class Employee {
 
     public void setSalary(double salary) {
         this.salary = salary;
+    }
+
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "id=" + id +
+                ", firstname='" + firstname + '\'' +
+                ", lastname='" + lastname + '\'' +
+                ", employee_no=" + employee_no +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                ", department_name='" + department_name + '\'' +
+                ", position_name='" + position_name + '\'' +
+                ", salary=" + salary +
+                '}';
     }
 }

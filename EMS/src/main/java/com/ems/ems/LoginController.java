@@ -109,6 +109,7 @@ public class LoginController implements Initializable {
 
                 if (resultSet.next()) {
                     role=resultSet.getString("role");
+
                     setLblError(Color.GREEN, "Login Successful..Redirecting..");
                 } else {
                     setLblError(Color.TOMATO, "Enter Correct Email/Password");
