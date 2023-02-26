@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="681.0" prefWidth="1003.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="681.0" prefWidth="1003.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ems.ems.payrollController">
    <children>
       <Label layoutX="16.0" layoutY="14.0" text="Payroll">
          <font>
@@ -18,9 +18,8 @@
       </Label>
       <AnchorPane layoutX="16.0" layoutY="57.0" prefHeight="48.0" prefWidth="969.0" style="-fx-background-color: #FFF;">
          <children>
-            <TextField layoutX="14.0" layoutY="12.0" prefHeight="25.0" prefWidth="201.0" promptText="Enter Employee ID" />
-            <Button layoutX="229.0" layoutY="12.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="67.0" stylesheets="@../Styles/style.css" text="Search" />
-            <Button layoutX="877.0" layoutY="12.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="78.0" stylesheets="@../Styles/style.css" text="Print" />
+            <TextField fx:id="searchTf" layoutX="14.0" layoutY="12.0" prefHeight="25.0" prefWidth="201.0" promptText="Enter Employee ID" />
+            <Button fx:id="btnSearch" layoutX="229.0" layoutY="12.0" mnemonicParsing="false" onAction="#searchButtonHandler" prefHeight="27.0" prefWidth="67.0" stylesheets="@../Styles/style.css" text="Search" />
          </children>
       </AnchorPane>
       <AnchorPane layoutX="16.0" layoutY="127.0" prefHeight="443.0" prefWidth="494.0" style="-fx-background-color: #fff;">
@@ -30,17 +29,11 @@
                   <Font name="Consolas Bold" size="12.0" />
                </font>
             </Label>
-            <TextField layoutX="291.0" layoutY="31.0" prefHeight="25.0" prefWidth="189.0" style="-fx-background-radius: 7;" />
-            <TextField layoutX="291.0" layoutY="74.0" prefHeight="25.0" prefWidth="189.0" style="-fx-background-radius: 7;" />
-            <TextField layoutX="291.0" layoutY="116.0" prefHeight="25.0" prefWidth="189.0" style="-fx-background-radius: 7;" />
+            <TextField fx:id="employeeIdTf" editable="false" layoutX="291.0" layoutY="31.0" prefHeight="25.0" prefWidth="189.0" style="-fx-background-radius: 7;" />
+            <TextField fx:id="nameTf" editable="false" layoutX="291.0" layoutY="74.0" prefHeight="25.0" prefWidth="189.0" style="-fx-background-radius: 7;" />
             <Label alignment="CENTER_RIGHT" layoutX="208.0" layoutY="74.0" prefHeight="25.0" prefWidth="78.0" text="Name" textAlignment="RIGHT">
                <font>
                   <Font name="Consolas Bold" size="14.0" />
-               </font>
-            </Label>
-            <Label alignment="CENTER_RIGHT" layoutX="208.0" layoutY="116.0" prefHeight="25.0" prefWidth="78.0" text="Destination">
-               <font>
-                  <Font name="Consolas Bold" size="12.0" />
                </font>
             </Label>
             <ImageView fitHeight="137.0" fitWidth="167.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
@@ -54,20 +47,20 @@
                   <Font name="Microsoft PhagsPa Bold" size="20.0" />
                </font>
             </Label>
-            <TextField layoutX="150.0" layoutY="229.0" prefHeight="25.0" prefWidth="324.0" style="-fx-background-radius: 7;" />
-            <TextField layoutX="150.0" layoutY="276.0" prefHeight="25.0" prefWidth="324.0" style="-fx-background-radius: 7;" />
-            <TextField layoutX="150.0" layoutY="322.0" prefHeight="25.0" prefWidth="324.0" style="-fx-background-radius: 7;" />
-            <Label alignment="CENTER_RIGHT" layoutX="17.0" layoutY="229.0" prefHeight="25.0" prefWidth="110.0" text="Travel Allowance">
+            <TextField fx:id="travelAllTf" editable="false" layoutX="150.0" layoutY="292.0" prefHeight="25.0" prefWidth="324.0" style="-fx-background-radius: 7;" />
+            <TextField fx:id="foodAllTf" editable="false" layoutX="150.0" layoutY="340.0" prefHeight="25.0" prefWidth="324.0" style="-fx-background-radius: 7;" />
+            <Label alignment="CENTER_RIGHT" layoutX="17.0" layoutY="292.0" prefHeight="25.0" prefWidth="110.0" text="Travel Allowance">
                <font>
                   <Font name="Consolas Bold" size="12.0" />
                </font>
             </Label>
-            <Label alignment="CENTER_RIGHT" layoutX="17.0" layoutY="276.0" prefHeight="25.0" prefWidth="110.0" text="Performace">
+            <Label alignment="CENTER_RIGHT" layoutX="17.0" layoutY="340.0" prefHeight="25.0" prefWidth="110.0" text="Food Allowance">
                <font>
                   <Font name="Consolas Bold" size="12.0" />
                </font>
             </Label>
-            <Label alignment="CENTER_RIGHT" layoutX="17.0" layoutY="322.0" prefHeight="25.0" prefWidth="110.0" text="Food Allowance">
+            <TextField fx:id="salaryTf" editable="false" layoutX="150.0" layoutY="244.0" prefHeight="25.0" prefWidth="324.0" style="-fx-background-radius: 7;" />
+            <Label layoutX="87.0" layoutY="250.0" text="Salary">
                <font>
                   <Font name="Consolas Bold" size="12.0" />
                </font>
@@ -82,7 +75,7 @@
                   <Font name="Microsoft PhagsPa Bold" size="20.0" />
                </font>
             </Label>
-            <TextField layoutX="146.0" layoutY="66.0" prefHeight="25.0" prefWidth="279.0" style="-fx-background-radius: 7;" />
+            <TextField fx:id="taxTf" editable="false" layoutX="146.0" layoutY="66.0" prefHeight="25.0" prefWidth="279.0" style="-fx-background-radius: 7;" />
             <Label alignment="CENTER_RIGHT" layoutX="57.0" layoutY="66.0" prefHeight="25.0" prefWidth="78.0" text="TAX">
                <font>
                   <Font name="Consolas Bold" size="12.0" />
@@ -93,20 +86,21 @@
                   <Font name="Consolas Bold" size="12.0" />
                </font>
             </Label>
-            <TextField layoutX="146.0" layoutY="109.0" prefHeight="25.0" prefWidth="279.0" style="-fx-background-radius: 7;" />
-            <TextField layoutX="146.0" layoutY="157.0" prefHeight="25.0" prefWidth="279.0" style="-fx-background-radius: 7;" />
+            <TextField fx:id="epfTf" editable="false" layoutX="146.0" layoutY="109.0" prefHeight="25.0" prefWidth="279.0" style="-fx-background-radius: 7;" />
+            <TextField fx:id="totalTf" editable="false" layoutX="146.0" layoutY="157.0" prefHeight="25.0" prefWidth="279.0" style="-fx-background-radius: 7;" />
             <Label alignment="CENTER_RIGHT" layoutX="25.0" layoutY="157.0" prefHeight="25.0" prefWidth="110.0" text="Total Deducation">
                <font>
                   <Font name="Consolas Bold" size="12.0" />
                </font>
             </Label>
-            <TextField layoutX="96.0" layoutY="261.0" prefHeight="25.0" prefWidth="189.0" style="-fx-background-radius: 7;" />
-            <Label alignment="CENTER" layoutX="303.0" layoutY="261.0" prefHeight="25.0" prefWidth="110.0" style="-fx-background-color: #54B435; -fx-background-radius: 30;" text="Net Pay">
+            <TextField fx:id="netpayTf" editable="false" layoutX="146.0" layoutY="261.0" prefHeight="25.0" prefWidth="189.0" style="-fx-background-radius: 7;" />
+            <Label alignment="CENTER" layoutX="57.0" layoutY="261.0" prefHeight="25.0" prefWidth="85.0" style="-fx-background-radius: 30;" text="Net Pay">
                <font>
                   <Font name="Consolas Bold" size="16.0" />
                </font>
             </Label>
          </children></AnchorPane>
-      <Button layoutX="833.0" layoutY="589.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="152.0" stylesheets="@../Styles/style.css" text="Pay Slip" textFill="#070606" />
+      <Button fx:id="payslipBtn" layoutX="833.0" layoutY="589.0" mnemonicParsing="false" onAction="#payslipHandler" prefHeight="34.0" prefWidth="152.0" stylesheets="@../Styles/style.css" text="Pay Slip" textFill="#070606" />
+      <Button fx:id="clearBtn" layoutX="24.0" layoutY="593.0" mnemonicParsing="false" onAction="#clearFields" prefHeight="28.0" prefWidth="67.0" stylesheets="@../Styles/style.css" text="Clear" textFill="#070606" />
    </children>
 </AnchorPane>
