@@ -128,7 +128,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="62.0" prefWidth="209.0" style="-fx-graphic-text-gap: 20; -fx-background-color: gray; -fx-text-fill: white;" text="Profile">
+            <Button mnemonicParsing="false" onAction="#profile" prefHeight="62.0" prefWidth="209.0" style="-fx-graphic-text-gap: 20; -fx-background-color: gray; -fx-text-fill: white;" text="Profile">
                <graphic>
                   <ImageView fitHeight="33.0" fitWidth="52.0" opacity="0.5" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -156,6 +156,6 @@
             </Button>
          </children>
       </VBox>
-      <StackPane fx:id="containerSP" prefHeight="150.0" prefWidth="602.0" GridPane.columnIndex="1" />
+      <StackPane fx:id="containerSP" prefHeight="150.0" prefWidth="602.0" style="-fx-background-color: #EEE;" GridPane.columnIndex="1" />
    </children>
 </GridPane>

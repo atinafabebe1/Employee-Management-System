@@ -12,6 +12,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
 import javafx.stage.Modality;
@@ -84,6 +85,37 @@ public class EmployeePageController implements Initializable {
         stage.centerOnScreen();
         stage.showAndWait();
     }
+    public void addDepartmentHandler(ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(this.getClass().getResource("DepartmentAdd.fxml"));
+        Parent root = fxmlLoader.load();
+        Stage stage = new Stage();
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+
+        stage.setResizable(false);
+        stage.setTitle("Alert!");
+        stage.sizeToScene();
+        stage.initModality(Modality.WINDOW_MODAL);
+        stage.initOwner(this.root.getScene().getWindow());
+        stage.centerOnScreen();
+        stage.showAndWait();
+    }
+
+    public void addPositionHandler(ActionEvent actionEvent) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(this.getClass().getResource("PositionADD.fxml"));
+        Parent root = fxmlLoader.load();
+        Stage stage = new Stage();
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+
+        stage.setResizable(false);
+        stage.setTitle("Alert!");
+        stage.sizeToScene();
+        stage.initModality(Modality.WINDOW_MODAL);
+        stage.initOwner(this.root.getScene().getWindow());
+        stage.centerOnScreen();
+        stage.showAndWait();
+    }
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         showTable();
@@ -98,8 +130,8 @@ public class EmployeePageController implements Initializable {
             updateEmployeefn = connection.prepareStatement("UPDATE employee SET firstname = ? WHERE id = ?");
             updateEmployeeln = connection.prepareStatement("UPDATE employee SET lastname = ? WHERE id = ?");
             updateEmployeeph = connection.prepareStatement("UPDATE employee SET phoneNumber = ? WHERE id = ?");
-            updateEmployeedn = connection.prepareStatement("UPDATE employee SET Dname = ? WHERE id = ?");
-            updateEmployeepn = connection.prepareStatement("UPDATE employee SET Pname = ? WHERE id = ?");
+            updateEmployeedn = connection.prepareStatement("UPDATE employee SET department_name = ? WHERE id = ?");
+            updateEmployeepn = connection.prepareStatement("UPDATE employee SET position_name = ? WHERE id = ?");
             updateEmployees = connection.prepareStatement("UPDATE employee SET salary = ? WHERE id = ?");
             deleteEmployee = connection.prepareStatement("DELETE FROM employee WHERE id = ?");
 
@@ -187,31 +219,34 @@ public class EmployeePageController implements Initializable {
             });
             departmentCol.setCellValueFactory(new PropertyValueFactory<Employee,String>("department_name"));
             departmentCol.setCellFactory(TextFieldTableCell.forTableColumn());
-            departmentCol.setOnEditCommit(event -> {
-                Employee employee=event.getRowValue();
-                try {
-                    updateEmployeedn.setString(1,event.getNewValue());
-                    updateEmployeedn.setInt(2,employee.getId());
-                    updateEmployeedn.executeUpdate();
-                } catch (SQLException e) {
-                    throw new RuntimeException(e);
-                }
-                employee.setDepartment_name(event.getNewValue());
+            departmentCol.setEditable(false);
 
-            });
+//            departmentCol.setOnEditCommit(event -> {
+//                Employee employee=event.getRowValue();
+//                try {
+//                    updateEmployeedn.setString(1,event.getNewValue());
+//                    updateEmployeedn.setInt(2,employee.getId());
+//                    updateEmployeedn.executeUpdate();
+//                } catch (SQLException e) {
+//                    throw new RuntimeException(e);
+//                }
+//                employee.setDepartment_name(event.getNewValue());
+//
+//            });
             positionCol.setCellValueFactory(new PropertyValueFactory<Employee,String>("position_name"));
             positionCol.setCellFactory(TextFieldTableCell.forTableColumn());
-            positionCol.setOnEditCommit(event -> {
-                Employee employee=event.getRowValue();
-                try {
-                    updateEmployeepn.setString(1,event.getNewValue());
-                    updateEmployeepn.setInt(2,employee.getId());
-                    updateEmployeepn.executeUpdate();
-                } catch (SQLException e) {
-                    throw new RuntimeException(e);
-                }
-                employee.setPosition_name(event.getNewValue());
-            });
+            positionCol.setEditable(false);
+//            positionCol.setOnEditCommit(event -> {
+//                Employee employee=event.getRowValue();
+//                try {
+//                    updateEmployeepn.setString(1,event.getNewValue());
+//                    updateEmployeepn.setInt(2,employee.getId());
+//                    updateEmployeepn.executeUpdate();
+//                } catch (SQLException e) {
+//                    throw new RuntimeException(e);
+//                }
+//                employee.setPosition_name(event.getNewValue());
+//            });
             salaryCol.setCellValueFactory(new PropertyValueFactory<Employee,Double>("salary"));
             salaryCol.setCellFactory(TextFieldTableCell.forTableColumn(new DoubleStringConverter()));
             salaryCol.setOnEditCommit(event -> {
@@ -255,17 +290,18 @@ public class EmployeePageController implements Initializable {
             });
 
             table.setItems(data);
-            table.getColumns().add(eNo);
-            table.getColumns().add(firstnamecol);
-            table.getColumns().add(lastnameCol);
-            table.getColumns().add(phoneNumberCol);
-            table.getColumns().add(departmentCol);
-            table.getColumns().add(positionCol);
-            table.getColumns().add(salaryCol);
-            table.getColumns().add(deleteCol);
+//            table.getColumns().add(eNo);
+//            table.getColumns().add(firstnamecol);
+//            table.getColumns().add(lastnameCol);
+//            table.getColumns().add(phoneNumberCol);
+//            table.getColumns().add(departmentCol);
+//            table.getColumns().add(positionCol);
+//            table.getColumns().add(salaryCol);
+//            table.getColumns().add(deleteCol);
         }catch (SQLException e){
             e.printStackTrace();
             new RJAlert(Alert.AlertType.WARNING,"failed to load employee","Connection Error","Error").show();
         }
     }
+
 }

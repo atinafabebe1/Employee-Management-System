@@ -20,9 +20,6 @@ public class EmployeeRecordController implements Initializable {
     @FXML
     private Button registerBTN;
     @FXML
-    private TextField DepartmetnIDTF;
-
-    @FXML
     private TextField EmployeeNOTF;
 
     @FXML
@@ -33,10 +30,6 @@ public class EmployeeRecordController implements Initializable {
 
     @FXML
     private TextField lastNameTF;
-
-    @FXML
-    private TextField positionIDTF;
-
     @FXML
     private TextField salaryTF;
     @FXML
@@ -55,9 +48,7 @@ public class EmployeeRecordController implements Initializable {
         firstNameTF.clear();
         lastNameTF.clear();
         PhoneNumberTF.clear();
-        DepartmetnIDTF.clear();
         salaryTF.clear();
-        positionIDTF.clear();
     }
 
 
@@ -112,6 +103,7 @@ public class EmployeeRecordController implements Initializable {
                 lastNameTF.clear();
                 PhoneNumberTF.clear();
                 salaryTF.clear();
+                errorLBL.setText("");
             } catch (SQLException e) {
                 e.printStackTrace();
             }

@@ -26,7 +26,14 @@ import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 public class LoginController implements Initializable {
-
+public static String username;
+public static void setterName(String name){
+    username=name;
+}
+public static String password;
+    public static void setterPassword(String name){
+        password=name;
+    }
     @FXML
     private Label lblErrors;
 
@@ -102,12 +109,15 @@ public class LoginController implements Initializable {
             //query
             String sql = "SELECT * FROM users Where username = ? and password = ?";
             try {
+
                 preparedStatement = con.prepareStatement(sql);
                 preparedStatement.setString(1, username);
                 preparedStatement.setString(2, password);
                 resultSet = preparedStatement.executeQuery();
 
                 if (resultSet.next()) {
+                    setterName(resultSet.getString("username"));
+                    setterPassword(resultSet.getString("password"));
                     role=resultSet.getString("role");
 
                     setLblError(Color.GREEN, "Login Successful..Redirecting..");

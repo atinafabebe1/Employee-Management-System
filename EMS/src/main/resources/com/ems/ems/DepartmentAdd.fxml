@@ -41,7 +41,7 @@
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor></Button>
-            <Button mnemonicParsing="false" onAction="#existBtnHandler" prefWidth="75.0" style="-fx-background-color: dodgerblue; -fx-text-fill: white;" text="EXIST">
+            <Button fx:id="deleteBtn" mnemonicParsing="false" onAction="#deleteBtnHandler" prefWidth="75.0" style="-fx-background-color: red; -fx-text-fill: white;" text="Delete">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor></Button>

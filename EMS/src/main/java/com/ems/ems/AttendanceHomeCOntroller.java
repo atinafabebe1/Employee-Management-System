@@ -43,7 +43,23 @@ public class AttendanceHomeCOntroller {
 
     }
 
-    public void btnViewReports_OnAction(ActionEvent event) {
+    public void btnViewReports_OnAction(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(this.getClass().getResource("AttendanceReport.fxml"));
+        Scene attendanceScene = new Scene(root);
+        Stage stage = new Stage();
+        stage.setTitle("Employee Attendance System: RecordAttendanceFormController Attendance");
+        stage.setScene(attendanceScene);
+        stage.setResizable(false);
+        stage.initOwner(btnRecordAttendance.getScene().getWindow());
+        stage.show();
 
+        Platform.runLater(()->{
+            stage.sizeToScene();
+            stage.centerOnScreen();
+        });
+
+    }
+
+    public void generateReport(ActionEvent event) {
     }
 }

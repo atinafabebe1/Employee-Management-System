@@ -72,4 +72,10 @@ public class HomePageEmployeerController implements Initializable{
         containerSP.getChildren().removeAll();
         containerSP.getChildren().setAll(fxml);
     }
+    @FXML
+    public void profile(javafx.event.ActionEvent actionEvent ) throws IOException{
+        Parent fxml=FXMLLoader.load(getClass().getResource("Profile.fxml"));
+        containerSP.getChildren().removeAll();
+        containerSP.getChildren().setAll(fxml);
+    }
 }

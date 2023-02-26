@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="416.0" prefWidth="601.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ems.ems.AttendanceReportController">
+    <VBox layoutX="14.0" layoutY="14.0" prefHeight="372.0" prefWidth="572.0" spacing="10.0">
+        <Label text="Attendance Report" />
+        <TableView fx:id="attendanceTable" prefHeight="300.0" prefWidth="550.0">
+            <columns>
+                <TableColumn fx:id="idColumn" prefWidth="75.0" text="ID" />
+                <TableColumn fx:id="employeeIdColumn" prefWidth="100.0" text="Employee ID" />
+                <TableColumn fx:id="dateColumn" prefWidth="150.0" text="Date" />
+                <TableColumn fx:id="statusColumn" prefWidth="100.0" text="Status" />
+            </columns>
+        </TableView>
+        <Button fx:id="generateReportButton" onAction="#generateReport" text="Generate Report" />
+      <TextArea fx:id="reportTextArea" prefHeight="200.0" prefWidth="200.0" />
+    </VBox>
+</AnchorPane>
